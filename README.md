@@ -1,6 +1,6 @@
 React
 
-small projects not worth to add to portfolio.
+small projects to learn react , but not enough for portfolio.
 
 usestate hook
 mini counter app
