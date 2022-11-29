@@ -1,4 +1,10 @@
-Learning hooks + fameous todo app
+React
+
+small projects not worth to add to portfolio.
+
+usestate hook
+mini counter app
+to do list
 
 <!-- # Getting Started with Create React App
 
