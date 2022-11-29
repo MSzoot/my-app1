@@ -3,7 +3,9 @@ React
 small projects to learn react , but not enough for portfolio.
 
 usestate hook
+
 mini counter app
+
 to do list
 
 <!-- # Getting Started with Create React App
