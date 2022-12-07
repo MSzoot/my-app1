@@ -1,26 +1,101 @@
 import './App.css';
-import {useState} from "react";
-
-
+import React, {useState} from 'react';
 
 function App() {
 
-  const[count,setCount] = useState(0)
+const [todoList,setTodoList] = useState([]);
 
+const [newTask, setNewTask] = useState('');
+
+const handleChange = (event) => {
+    setNewTask(event.target.value)
+}
+
+const addTask = () => {
+  setTodoList([...todoList, newTask]); 
+}
+
+const deleteTask = (taskName) => {
+  const newTodolist = todoList.filter((task) => {
+    if (task === taskName){
+      return false;
+    } else {
+      return true;
+    }
+  })
+    setTodoList(newTodolist)
+}
+
+  return <div className='App'>
+<div className='addTask'>
+  <input onChange={handleChange} />
+  <br></br><br></br>
+  <button onClick={addTask}>Add Task</button>
+</div>
+  <br></br><br></br><br></br><br></br><br></br><br></br>
+<div className='list'>
+  {todoList.map((task) => {
   return (
-  <div className='App'>
-    <h2>Simple Counter App</h2>
-    <h1>{count}</h1>
-    <button onClick={()=>setCount(count +1)}>Incrase</button>
-    <button onClick={()=> setCount(count -1)}>Decrase</button>
-    <button onClick={()=>setCount(0)}>Reset</button>
+  <div>
+    <h1 style={{display: "inline-block"}}>{task}</h1>
+    <button onClick={() =>deleteTask(task)}>X</button>
+  </div>)
+})}
+</div>
+
   </div>
-)}
-
-
-
+}
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import './App.css';
+// import {useState} from "react";
+
+
+
+// function App() {
+
+//   const[count,setCount] = useState(0)
+
+//   return (
+//   <div className='App'>
+//     <h2>Simple Counter App</h2>
+//     <h1>{count}</h1>
+//     <button onClick={()=>setCount(count +1)}>Incrase</button>
+//     <button onClick={()=> setCount(count -1)}>Decrase</button>
+//     <button onClick={()=>setCount(0)}>Reset</button>
+//   </div>
+// )}
+
+
+
+
+// export default App;
 
 
 
